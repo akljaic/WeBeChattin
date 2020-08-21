@@ -11,10 +11,9 @@ import android.widget.TextView;
 
 public class Register extends AppCompatActivity {
 
-    EditText username;
+    EditText phone;
+    String phoneNumber;
     Button registerButton;
-    String user;
-    String pass;
     TextView login;
 
     @Override
@@ -22,17 +21,24 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        username = (EditText)findViewById(R.id.username);
+        phone = (EditText)findViewById(R.id.phoneNumber);
         registerButton = (Button)findViewById(R.id.registerButton);
-        login = (TextView)findViewById(R.id.login);
 
 
-        //Firebase.setAndroidContext(this);
-
-        login.setOnClickListener(new View.OnClickListener() {
+        registerButton.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Register.this, Login.class));
+            public void onClick(View view){
+                phoneNumber = phone.getText().toString().trim();
+
+                if (phoneNumber.isEmpty() || phoneNumber.length() < 10){
+                    phone.setError("Enter a valid phone number!");
+                    phone.requestFocus();
+                    return;
+                }
+
+                Intent intent = new Intent(Register.this, VerifyPhone.class);
+                intent.putExtra("phoneNumber", phoneNumber);
+                startActivity(intent);
             }
         });
 
