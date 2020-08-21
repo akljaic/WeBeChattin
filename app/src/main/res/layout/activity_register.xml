@@ -10,39 +10,39 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Register"
-        android:textSize="30sp"
+        android:layout_marginBottom="20dp"
         android:gravity="center"
-        android:layout_marginBottom="20dp"/>
+        android:text="Easy registration!"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimary" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="Just enter your phone number!"
+        android:textSize="15sp" />
 
     <EditText
-        android:id="@+id/username"
-        android:layout_width="365dp"
-        android:layout_height="49dp"
+        android:id="@+id/phoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:background="#000000"
-        android:hint="Enter username"
-        android:inputType="text"
+        android:hint="enter mobile number"
         android:maxLines="1"
-        android:textColor="#ffffff" />
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="363dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="10dp"
-        android:background="#000000"
-        android:hint="Enter password"
-        android:inputType="textPassword"
-        android:maxLines="1"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:inputType="phone"
+        android:maxLength="10"
+        android:digits="0123456789"/>
 
     <Button
         android:id="@+id/registerButton"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="#cdd8f1"/>
 
     <TextView
         android:id="@+id/login"
