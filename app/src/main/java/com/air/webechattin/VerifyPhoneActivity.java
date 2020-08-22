@@ -2,7 +2,6 @@ package com.air.webechattin;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.arch.core.executor.TaskExecutor;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,7 +23,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-public class VerifyPhone extends AppCompatActivity {
+public class VerifyPhoneActivity extends AppCompatActivity implements View.OnClickListener {
 
     String verificationId;
     EditText etCode;
@@ -43,26 +42,22 @@ public class VerifyPhone extends AppCompatActivity {
         String phoneNumber = intent.getStringExtra("phoneNumber");
         sendVerificationCode(phoneNumber);
 
-        //manual entering verification code if automatic sms detection didnt work
-        bSignIn = (Button)findViewById(R.id.signInButton);
-
-        bSignIn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                String code = etCode.getText().toString().trim();
-                if (code.isEmpty() || code.length() < 6){
-                    etCode.setError("Enter valid code");
-                    etCode.requestFocus();
-                    return;
-                }
-
-                verifyVerificationCode(code);
-            }
-
-
-        });
+        findViewById(R.id.signInButton).setOnClickListener(this);
     }
 
+    @Override
+    public void onClick(View view) {
+        String code = etCode.getText().toString().trim();
+        if (code.isEmpty() || code.length() < 6){
+            etCode.setError("Enter valid code");
+            etCode.requestFocus();
+            return;
+        }
+
+        verifyVerificationCode(code);
+    }
+
+    //sending verification code
     private void sendVerificationCode(String phoneNumber) {
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
                 "+385" + phoneNumber,
@@ -71,12 +66,12 @@ public class VerifyPhone extends AppCompatActivity {
                 TaskExecutors.MAIN_THREAD,
                 mCallbacks);;
     }
-
+    //is the code sent
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
         @Override
         public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
             String code = phoneAuthCredential.getSmsCode();
-
+            //manual entry
             if(code != null){
                 etCode.setText(code);
                 verifyVerificationCode(code);
@@ -85,7 +80,7 @@ public class VerifyPhone extends AppCompatActivity {
 
         @Override
         public void onVerificationFailed(FirebaseException e){
-            Toast.makeText(VerifyPhone.this, e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(VerifyPhoneActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
         }
 
         @Override
@@ -96,6 +91,7 @@ public class VerifyPhone extends AppCompatActivity {
         }
     };
 
+    //code verification
     private void verifyVerificationCode(String code) {
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
 
@@ -103,11 +99,13 @@ public class VerifyPhone extends AppCompatActivity {
     }
 
     private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
-        fbAuth.signInWithCredential(credential).addOnCompleteListener(VerifyPhone.this, new OnCompleteListener<AuthResult>() {
+        fbAuth.signInWithCredential(credential).addOnCompleteListener(VerifyPhoneActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    Intent intent = new Intent(VerifyPhone.this, Profile.class);
+                    Toast.makeText(VerifyPhoneActivity.this, "Successful verification!", Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(VerifyPhoneActivity.this, ProfileActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                 }
@@ -130,4 +128,6 @@ public class VerifyPhone extends AppCompatActivity {
             }
         });
     }
+
+
 }

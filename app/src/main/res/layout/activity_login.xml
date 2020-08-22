@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.air.webechattin.Login"
+    tools:context="com.air.webechattin.LoginActivity"
     android:orientation="vertical"
     android:gravity="center">
 
@@ -13,43 +13,34 @@
         android:layout_marginBottom="20dp"
         android:gravity="center"
         android:text="Login"
-        android:textSize="30sp" />
-
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="362dp"
-        android:layout_height="49dp"
-        android:layout_marginBottom="10dp"
-        android:background="#000000"
-        android:hint="Enter username"
-        android:inputType="text"
-        android:maxLines="1"
-        android:textColor="#ffffff" />
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="358dp"
-        android:layout_height="49dp"
-        android:layout_marginBottom="10dp"
-        android:background="#000000"
-        android:hint="Enter password"
-        android:inputType="textPassword"
-        android:maxLines="1"
-        android:textColor="#ffffff" />
-
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="Login" />
-
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimary" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Don't have an account? Register!"
-        android:textSize="20sp"
+        android:layout_marginBottom="20dp"
         android:gravity="center"
-        android:id="@+id/register"/>
+        android:text="Just enter your phone number \n and verificate it!"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/phoneNumberEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="enter mobile number"
+        android:maxLines="1"
+        android:inputType="phone"
+        android:maxLength="10"
+        android:digits="0123456789"/>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_marginBottom="20dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="#cdd8f1"/>
 
 </LinearLayout>
