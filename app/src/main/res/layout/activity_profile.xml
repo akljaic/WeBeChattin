@@ -6,13 +6,18 @@
     tools:context="com.air.webechattin.LoginActivity"
     android:orientation="vertical">
 
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:gravity="center"
-        android:text="Welcome to your profile!"
+        android:text="Welcome to your profile!\n Set it up!"
         android:textSize="20sp"
         android:textColor="@color/colorPrimary" />
 

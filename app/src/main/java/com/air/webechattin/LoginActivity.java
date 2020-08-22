@@ -20,24 +20,25 @@ import com.google.firebase.database.ValueEventListener;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText etPhone;
-    FirebaseAuth mAuth;
+
+    //FirebaseAuth mFirebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-        if(user != null){
-            Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-        }
-        else {
+        //if(user != null){
+        //    Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
+        //    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        //    startActivity(intent);
+        //}
+        //else {
             etPhone = (EditText)findViewById(R.id.phoneNumberEditText);
             findViewById(R.id.loginButton).setOnClickListener(this);
-        }
+        //}
     }
 
     @Override

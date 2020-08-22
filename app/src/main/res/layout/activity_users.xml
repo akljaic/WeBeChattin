@@ -6,6 +6,11 @@
     tools:context="com.air.webechattin.UsersActivity"
     android:orientation="vertical">
 
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"/>
     <TextView
         android:id="@+id/noUsersText"
         android:layout_width="match_parent"
