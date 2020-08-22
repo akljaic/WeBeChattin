@@ -11,28 +11,27 @@ import android.widget.TextView;
 
 public class Register extends AppCompatActivity {
 
-    EditText phone;
+    EditText etPhone;
     String phoneNumber;
-    Button registerButton;
-    TextView login;
+    Button bRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        phone = (EditText)findViewById(R.id.phoneNumber);
-        registerButton = (Button)findViewById(R.id.registerButton);
+        etPhone = (EditText)findViewById(R.id.phoneNumberEditText);
+        bRegister = (Button)findViewById(R.id.registerButton);
 
 
-        registerButton.setOnClickListener(new View.OnClickListener(){
+        bRegister.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                phoneNumber = phone.getText().toString().trim();
+                phoneNumber = etPhone.getText().toString().trim();
 
                 if (phoneNumber.isEmpty() || phoneNumber.length() < 10){
-                    phone.setError("Enter a valid phone number!");
-                    phone.requestFocus();
+                    etPhone.setError("Enter a valid phone number!");
+                    etPhone.requestFocus();
                     return;
                 }
 
