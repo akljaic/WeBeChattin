@@ -1,16 +1,22 @@
 package com.air.webechattin;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -106,9 +112,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
-
-        //MenuInflater inflater = getMenuInflater();
-        //inflater.inflate(R.menu.options_menu, menu);
         getMenuInflater().inflate(R.menu.options_menu, menu);
 
         return true;
@@ -128,7 +131,53 @@ public class MainActivity extends AppCompatActivity {
                 mAuth.signOut();
                 SendUserToLoginActivity();
                 break;
+            case R.id.main_create_group_option:
+                RequestNewGroup();
+                break;
         }
         return true;
+    }
+
+    private void RequestNewGroup() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.AlertDialog);
+        builder.setTitle("Enter group name: ");
+
+        final EditText groupNameField = new EditText(MainActivity.this);
+        groupNameField.setHint("e.g. My Friends");
+        builder.setView(groupNameField);
+
+        builder.setPositiveButton("Create", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                String groupName = groupNameField.getText().toString();
+
+                if(TextUtils.isEmpty(groupName)){
+                    Toast.makeText(MainActivity.this, "Please enter group name", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    CreateNewGroup(groupName);
+                }
+            }
+        });
+
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+
+        builder.show();
+    }
+
+    private void CreateNewGroup(final String groupName) {
+        rootReference.child("Groups").child(groupName).setValue("").addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    Toast.makeText(MainActivity.this, groupName + " group is been created", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }
