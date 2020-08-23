@@ -58,6 +58,28 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+
+    private void InitializeFields() {
+        mCreateAccountButton = (Button)findViewById(R.id.register_button);
+        mUserEmail = (EditText)findViewById(R.id.register_email);
+        mUserPassword = (EditText)findViewById(R.id.register_password);
+        mAlreadyHaveAccount = (TextView)findViewById(R.id.already_have_an_account_link);
+
+        loadingBar = new ProgressDialog(this);
+    }
+
+    private void SendUserToLoginActivity() {
+        Intent registerIntent = new Intent(RegisterActivity.this, LoginActivity.class);
+        startActivity(registerIntent);
+    }
+
+    private void SendUserToMainActivity() {
+        Intent mainIntent = new Intent(RegisterActivity.this, MainActivity.class);
+        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(mainIntent);
+        finish();
+    }
+
     private void CreateNewAccount() {
         String email = mUserEmail.getText().toString();
         String password = mUserPassword.getText().toString();
@@ -94,28 +116,5 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             });
         }
-    }
-
-
-
-    private void InitializeFields() {
-        mCreateAccountButton = (Button)findViewById(R.id.register_button);
-        mUserEmail = (EditText)findViewById(R.id.register_email);
-        mUserPassword = (EditText)findViewById(R.id.register_password);
-        mAlreadyHaveAccount = (TextView)findViewById(R.id.already_have_an_account_link);
-
-        loadingBar = new ProgressDialog(this);
-    }
-
-    private void SendUserToLoginActivity() {
-        Intent registerIntent = new Intent(RegisterActivity.this, LoginActivity.class);
-        startActivity(registerIntent);
-    }
-
-    private void SendUserToMainActivity() {
-        Intent mainIntent = new Intent(RegisterActivity.this, MainActivity.class);
-        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(mainIntent);
-        finish();
     }
 }

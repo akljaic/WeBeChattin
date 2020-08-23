@@ -61,6 +61,29 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    private void InitializeFields() {
+        mLoginButton = (Button)findViewById(R.id.login_button);
+        mPhoneLoginButton = (Button)findViewById(R.id.phone_login_button);
+        mUserEmail = (EditText)findViewById(R.id.login_email);
+        mUserPassword = (EditText)findViewById(R.id.login_password);
+        mNeedNewAccount = (TextView)findViewById(R.id.need_new_account_link);
+        mForgetPassword = (TextView)findViewById(R.id.forget_password_link);
+
+        loadingBar = new ProgressDialog(this);
+    }
+
+    private void SendUserToMainActivity() {
+        Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
+        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(mainIntent);
+        finish();
+    }
+
+    private void SendUserToRegisterActivity() {
+        Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
+        startActivity(registerIntent);
+    }
+
     private void AllowUserToLogin() {
         String email = mUserEmail.getText().toString();
         String password = mUserPassword.getText().toString();
@@ -94,28 +117,5 @@ public class LoginActivity extends AppCompatActivity {
                 }
             });
         }
-    }
-
-    private void InitializeFields() {
-        mLoginButton = (Button)findViewById(R.id.login_button);
-        mPhoneLoginButton = (Button)findViewById(R.id.phone_login_button);
-        mUserEmail = (EditText)findViewById(R.id.login_email);
-        mUserPassword = (EditText)findViewById(R.id.login_password);
-        mNeedNewAccount = (TextView)findViewById(R.id.need_new_account_link);
-        mForgetPassword = (TextView)findViewById(R.id.forget_password_link);
-
-        loadingBar = new ProgressDialog(this);
-    }
-
-    private void SendUserToMainActivity() {
-        Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
-        mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(mainIntent);
-        finish();
-    }
-
-    private void SendUserToRegisterActivity() {
-        Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
-        startActivity(registerIntent);
     }
 }
