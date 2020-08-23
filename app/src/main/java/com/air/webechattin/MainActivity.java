@@ -20,10 +20,10 @@ public class MainActivity extends AppCompatActivity {
     ViewPager mViewPager;
     TabLayout mTabLayout;
 
-    FirebaseAuth mFirebaseAuth;
     FirebaseUser currentUser;
-    String mPhone, mPhotoURL;
+    FirebaseAuth mAuth;
 
+    //Fragments
     TabsAccessAdapter mTabsAccessAdapter;
 
 
@@ -32,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
 
         mToolbar = (Toolbar) findViewById(R.id.main_page_toolbar);
         setSupportActionBar(mToolbar);
@@ -61,18 +64,27 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
+        super.onCreateOptionsMenu(menu);
+
+        //MenuInflater inflater = getMenuInflater();
+        //inflater.inflate(R.menu.options_menu, menu);
+        getMenuInflater().inflate(R.menu.options_menu, menu);
+
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        super.onOptionsItemSelected(item);
+
         switch (item.getItemId()){
-            case R.id.menuLogout:
-                FirebaseAuth.getInstance().signOut();
-                finish();
-                startActivity(new Intent(this, LoginActivity_bck.class));
+            case R.id.main_find_friends_option:
+                break;
+            case R.id.main_settings_option:
+                break;
+            case R.id.main_logout_option:
+                mAuth.signOut();
+                SendUserToLoginActivity();
                 break;
         }
         return true;
