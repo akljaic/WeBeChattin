@@ -26,12 +26,6 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    //noinspection GradleCompatible
-    implementation "com.android.support:support-v4:23.1.1"
-    //noinspection GradleCompatible
-    implementation "com.android.support:appcompat-v7:23.1.1"
-    //noinspection GradleCompatible
-    //implementation "com.android.support:design-v7:23.1.1"
     implementation "com.android.support:support-annotations:23.1.1"
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'com.google.android.material:material:1.0.0'
@@ -39,7 +33,15 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //Circle Image View
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //Image Cropper
+    api 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     //firebase
     implementation 'com.google.firebase:firebase-auth:19.3.2'
