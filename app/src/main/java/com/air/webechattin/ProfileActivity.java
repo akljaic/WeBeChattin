@@ -1,46 +1,41 @@
 package com.air.webechattin;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
-import com.google.firebase.auth.FirebaseAuth;
+import org.w3c.dom.Text;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class ProfileActivity extends AppCompatActivity {
+
+    String receiverUserId;
+    CircleImageView mUserProfileImage;
+    TextView mUserProfileName;
+    TextView mUserProfileStatus;
+    Button mSendRequestButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        receiverUserId = getIntent().getExtras().get("visitUserId").toString();
 
-        setSupportActionBar(toolbar);
+        Toast.makeText(this, "User ID: " + receiverUserId, Toast.LENGTH_SHORT).show();
+
+        InitializeFields();
+
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.options_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.main_logout_option:
-                FirebaseAuth.getInstance().signOut();
-                finish();
-                startActivity(new Intent(this, LoginActivity_bck.class));
-                break;
-        }
-        return true;
+    private void InitializeFields() {
+        mUserProfileImage = (CircleImageView)findViewById(R.id.visit_profile_image);
+        mUserProfileName = (TextView)findViewById(R.id.visit_profile_name);
+        mUserProfileStatus = (TextView)findViewById(R.id.visit_profile_status);
     }
 }

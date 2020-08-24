@@ -77,6 +77,10 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
+    private void SendUserToFindFriendsActivity() {
+        Intent findFriendsIntent = new Intent(MainActivity.this, FindFriendActivity.class);
+        startActivity(findFriendsIntent);
+    }
     @Override
     protected void onStart() {
         super.onStart();
@@ -123,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()){
             case R.id.main_find_friends_option:
+                SendUserToFindFriendsActivity();
                 break;
             case R.id.main_settings_option:
                 SendUserToSettingsActivity();
