@@ -10,17 +10,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6387b091-3b4b-4fee-b429-3932091d7bca" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/air/webechattin/PhoneLoginActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/air/webechattin/VerifyPhoneActivity_bck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_phone_login.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_verify_phone_bck.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/air/webechattin/GroupChatActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/air/webechattin/GroupChatActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/air/webechattin/GroupsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/air/webechattin/GroupsFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_group_chat.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_group_chat.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/air/webechattin/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/air/webechattin/LoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/air/webechattin/LoginActivity_bck.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/air/webechattin/LoginActivity_bck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/air/webechattin/VerifyPhoneActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/air/webechattin/VerifyPhoneActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_verify_phone.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_verify_phone.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,10 +232,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Inspections/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598131385194" />
-    <state x="552" y="178" width="816" height="775" key="#Intentions" timestamp="1598141697750">
+    <state x="552" y="178" width="816" height="775" key="#Intentions" timestamp="1598231571544">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="178" width="816" height="775" key="#Intentions/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598141697750" />
+    <state x="552" y="178" width="816" height="775" key="#Intentions/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598231571544" />
     <state x="477" y="251" key="#PSD" timestamp="1598188178680">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -266,22 +276,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="261" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598138347992" />
-    <state width="1877" height="239" key="GridCell.Tab.0.bottom" timestamp="1598194856110">
+    <state width="1877" height="239" key="GridCell.Tab.0.bottom" timestamp="1598229810416">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="239" key="GridCell.Tab.0.bottom/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598194856110" />
-    <state width="1877" height="239" key="GridCell.Tab.0.center" timestamp="1598194856109">
+    <state width="1877" height="239" key="GridCell.Tab.0.bottom/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598229810416" />
+    <state width="1877" height="239" key="GridCell.Tab.0.center" timestamp="1598229810415">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="239" key="GridCell.Tab.0.center/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598194856109" />
-    <state width="1877" height="239" key="GridCell.Tab.0.left" timestamp="1598194856109">
+    <state width="1877" height="239" key="GridCell.Tab.0.center/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598229810415" />
+    <state width="1877" height="239" key="GridCell.Tab.0.left" timestamp="1598229810415">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="239" key="GridCell.Tab.0.left/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598194856109" />
-    <state width="1877" height="239" key="GridCell.Tab.0.right" timestamp="1598194856110">
+    <state width="1877" height="239" key="GridCell.Tab.0.left/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598229810415" />
+    <state width="1877" height="239" key="GridCell.Tab.0.right" timestamp="1598229810416">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="239" key="GridCell.Tab.0.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598194856110" />
+    <state width="1877" height="239" key="GridCell.Tab.0.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598229810416" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1598137657571">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -306,5 +316,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="148" key="refactoring.ChangeSignatureDialog/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598226557907" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1598232798824">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598232798824" />
   </component>
 </project>

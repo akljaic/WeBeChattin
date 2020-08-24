@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.PhoneAuthProvider;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -52,11 +53,17 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
         mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AllowUserToLogin();
+            }
+        });
+
+        mPhoneLoginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SendUserToPhoneLoginActivity();
             }
         });
     }
@@ -82,6 +89,11 @@ public class LoginActivity extends AppCompatActivity {
     private void SendUserToRegisterActivity() {
         Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
         startActivity(registerIntent);
+    }
+
+    private void SendUserToPhoneLoginActivity() {
+        Intent phoneLoginIntent = new Intent(LoginActivity.this, PhoneLoginActivity.class);
+        startActivity(phoneLoginIntent);
     }
 
     private void AllowUserToLogin() {

@@ -68,7 +68,7 @@ public class LoginActivity_bck extends AppCompatActivity implements View.OnClick
         }
 
         else {
-            Intent intent = new Intent(LoginActivity_bck.this, VerifyPhoneActivity.class);
+            Intent intent = new Intent(LoginActivity_bck.this, VerifyPhoneActivity_bck.class);
             intent.putExtra("phoneNumber", phoneNumber);
             startActivity(intent);
         }
