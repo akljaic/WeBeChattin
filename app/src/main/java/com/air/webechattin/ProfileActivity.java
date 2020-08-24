@@ -165,6 +165,9 @@ public class ProfileActivity extends AppCompatActivity {
                     if(currentState.equals("request_received")){
                         AcceptChatRequest();
                     }
+                    if (currentState.equals("friends")){
+                        RemoveContact();
+                    }
                 }
             });
         }
@@ -235,6 +238,29 @@ public class ProfileActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
                     chatRequestReference.child(receiverUserId).child(senderUserId).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()){
+                                mSendRequestButton.setEnabled(true);
+                                currentState = "new";
+                                mSendRequestButton.setText("Send message");
+
+                                mDeclineRequestButton.setVisibility(View.INVISIBLE);
+                                mDeclineRequestButton.setEnabled(false);
+                            }
+                        }
+                    });
+                }
+            }
+        });
+    }
+
+    private void RemoveContact() {
+        contactsReference.child(senderUserId).child(receiverUserId).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    contactsReference.child(receiverUserId).child(senderUserId).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
