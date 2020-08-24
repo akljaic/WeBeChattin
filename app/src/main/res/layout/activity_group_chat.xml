@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:textAllCaps="false"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textColor="@android:color/background_dark"
                 android:layout_marginStart="2dp"
                 android:layout_marginEnd="2dp"
@@ -48,7 +48,7 @@
 
         <EditText
             android:id="@+id/group_chat_input_message"
-            android:layout_width="350dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:hint="Enter a message"
             android:padding="17dp"/>
