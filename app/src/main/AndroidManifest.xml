@@ -9,8 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FindFriendActivity"
-            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".FindFriendActivity"/>
         <activity android:name=".VerifyPhoneActivity" />
         <activity android:name=".PhoneLoginActivity" />
         <activity android:name=".GroupChatActivity" />
