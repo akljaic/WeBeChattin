@@ -19,6 +19,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.util.HashMap;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
@@ -37,6 +39,7 @@ public class ProfileActivity extends AppCompatActivity {
     DatabaseReference usersReference;
     DatabaseReference chatRequestReference;
     DatabaseReference contactsReference;
+    DatabaseReference notificationReference;
     FirebaseAuth mAuth;
 
     @Override
@@ -49,6 +52,7 @@ public class ProfileActivity extends AppCompatActivity {
         usersReference = FirebaseDatabase.getInstance().getReference().child("Users");
         chatRequestReference = FirebaseDatabase.getInstance().getReference().child("Chat Requests");
         contactsReference = FirebaseDatabase.getInstance().getReference().child("Contacts");
+        notificationReference = FirebaseDatabase.getInstance().getReference().child("Notifications");
 
         receiverUserId = getIntent().getExtras().get("visitUserId").toString();
         senderUserId = mAuth.getCurrentUser().getUid();
@@ -185,9 +189,21 @@ public class ProfileActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
-                                mSendRequestButton.setEnabled(true);
-                                currentState = "request_sent";
-                                mSendRequestButton.setText("Cancel chat request ");
+                                HashMap<String, String> chatNotification = new HashMap<>();
+                                chatNotification.put("from", senderUserId);
+                                chatNotification.put("type", "request");
+
+                                notificationReference.child(receiverUserId).push().setValue(chatNotification).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()){
+                                            mSendRequestButton.setEnabled(true);
+                                            currentState = "request_sent";
+                                            mSendRequestButton.setText("Cancel chat request ");
+                                        }
+                                    }
+                                });
+
                             }
                         }
                     });

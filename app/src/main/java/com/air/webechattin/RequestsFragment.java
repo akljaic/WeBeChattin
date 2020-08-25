@@ -95,12 +95,11 @@ public class RequestsFragment extends Fragment {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                                         if(snapshot.hasChild("image")){
-                                            String profileImage = snapshot.child("image").getValue().toString();
+                                            final String profileImage = snapshot.child("image").getValue().toString();
 
                                             Picasso.get().load(profileImage).placeholder(R.drawable.profile_image).into(holder.userImage);
                                         }
 
-                                        String profileStatus = snapshot.child("status").getValue().toString();
                                         final String profileName = snapshot.child("name").getValue().toString();
 
                                         holder.userName.setText(profileName);
@@ -165,16 +164,15 @@ public class RequestsFragment extends Fragment {
 
                                     @Override
                                     public void onCancelled(@NonNull DatabaseError error) {
-
                                     }
                                 });
+
                             }
                         }
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
                     }
                 });
             }
