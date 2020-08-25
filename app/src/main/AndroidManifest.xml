@@ -19,8 +19,6 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".VerifyPhoneActivity_bck" />
-        <activity android:name=".UsersActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +27,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".ChatActivity" />
-        <activity android:name=".LoginActivity_bck" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
