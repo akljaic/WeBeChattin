@@ -30,15 +30,16 @@
         android:orientation="horizontal">
 
         <EditText
+            android:id="@+id/chat_input_message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="type message here..."
             android:padding="15dp"
             android:maxLines="5"
-            android:layout_toStartOf="@+id/send_message_btn" />
+            android:layout_toStartOf="@+id/chat_send_message_button" />
 
         <ImageButton
-            android:id="@+id/send_message_btn"
+            android:id="@+id/chat_send_message_button"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:src="@drawable/send_message"

@@ -1,37 +1,32 @@
 package com.air.webechattin;
 
-import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 
-import android.net.Uri;
+import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.firebase.ui.database.SnapshotParser;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ChatActivity extends AppCompatActivity {
     String receiverId;
     String receiverName;
+    String receiverImage;
+
+    TextView mUserName;
+    CircleImageView mUserImage;
+    ImageButton mSendMessage;
+    EditText mInputMessage;
+
+    Toolbar chatToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +35,37 @@ public class ChatActivity extends AppCompatActivity {
 
         receiverId = getIntent().getExtras().get("visit_user_id").toString();
         receiverName = getIntent().getExtras().get("visit_user_name").toString();
+        receiverImage = getIntent().getExtras().get("visit_user_image").toString();
 
+        InitializeFields();
 
-        Toast.makeText(ChatActivity.this, "Id: " + receiverId, Toast.LENGTH_SHORT).show();
+        mUserName.setText(receiverName);
+        Picasso.get().load(receiverImage).placeholder(R.drawable.profile_image).into(mUserImage);
+
+        mSendMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                
+            }
+        });
+    }
+
+    private void InitializeFields() {
+
+        chatToolbar = (Toolbar)findViewById(R.id.chat_toolbar);
+        setSupportActionBar(chatToolbar);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setDisplayShowCustomEnabled(true);
+
+        LayoutInflater layoutInflater = (LayoutInflater)this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View actionBarView = layoutInflater.inflate(R.layout.custom_chat_bar, null);
+        actionBar.setCustomView(actionBarView);
+
+        mUserImage = (CircleImageView)findViewById(R.id.custom_profile_image);
+        mUserName = (TextView)findViewById(R.id.custom_profile_name);
+        mSendMessage = (ImageButton)findViewById(R.id.chat_send_message_button);
+        mInputMessage = (EditText)findViewById(R.id.chat_input_message);
     }
 }
