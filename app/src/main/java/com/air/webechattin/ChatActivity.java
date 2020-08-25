@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -29,9 +30,18 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 public class ChatActivity extends AppCompatActivity {
+    String receiverId;
+    String receiverName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+
+        receiverId = getIntent().getExtras().get("visit_user_id").toString();
+        receiverName = getIntent().getExtras().get("visit_user_name").toString();
+
+
+        Toast.makeText(ChatActivity.this, "Id: " + receiverId, Toast.LENGTH_SHORT).show();
     }
 }

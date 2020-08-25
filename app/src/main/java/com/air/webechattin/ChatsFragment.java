@@ -1,5 +1,6 @@
 package com.air.webechattin;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,12 +13,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -69,16 +75,54 @@ public class ChatsFragment extends Fragment {
 
         FirebaseRecyclerAdapter<Contacts, ChatsViewHolder> adapter = new FirebaseRecyclerAdapter<Contacts, ChatsViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull ChatsViewHolder holder, int position, @NonNull Contacts model) {
+            protected void onBindViewHolder(@NonNull final ChatsViewHolder holder, int position, @NonNull Contacts model) {
+                final String profileId = getRef(position).getKey();
 
+                usersReference.child(profileId).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists()){
+                            if(snapshot.hasChild("image")){
+                                String profileImage = snapshot.child("image").getValue().toString();
+                                Picasso.get().load(profileImage).placeholder(R.drawable.profile_image).into(holder.userImage);
+                            }
+                            String profileStatus = snapshot.child("status").getValue().toString();
+                            final String profileName = snapshot.child("name").getValue().toString();
+
+                            holder.userName.setText(profileName);
+                            holder.userStatus.setText(profileStatus);
+
+                            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent chatIntent = new Intent(getContext(), ChatActivity.class);
+                                    chatIntent.putExtra("visit_user_id", profileId);
+                                    chatIntent.putExtra("visit_user_name", profileName);
+                                    startActivity(chatIntent);
+
+                                }
+                            });
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
 
             @NonNull
             @Override
             public ChatsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                return null;
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.users_display_layout, parent,false);
+                ChatsViewHolder viewHolder = new ChatsViewHolder(view);
+                return viewHolder;
             }
-        }
+        };
+
+        mChatList.setAdapter(adapter);
+        adapter.startListening();
     }
 
     public static class ChatsViewHolder extends RecyclerView.ViewHolder {
