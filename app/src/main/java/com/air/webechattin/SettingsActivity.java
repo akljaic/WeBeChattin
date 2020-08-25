@@ -3,6 +3,7 @@ package com.air.webechattin;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -41,6 +42,7 @@ public class SettingsActivity extends AppCompatActivity {
     EditText mUsername;
     EditText mUserStatus;
     CircleImageView mUserProfileImage;
+    Toolbar mSettingsToolbar;
 
     String currentUserID;
     static final int galleryPick = 1;
@@ -89,6 +91,11 @@ public class SettingsActivity extends AppCompatActivity {
         mUserStatus = (EditText)findViewById(R.id.set_profile_status);
         mUserProfileImage = (CircleImageView)findViewById(R.id.set_profile_image);
 
+        mSettingsToolbar = (Toolbar)findViewById(R.id.settings_toolbar);
+        setSupportActionBar(mSettingsToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setTitle("Account settings");
     }
 
     private void SendUserToMainActivity() {
@@ -164,12 +171,12 @@ public class SettingsActivity extends AppCompatActivity {
             Toast.makeText(this, "Please, write your status", Toast.LENGTH_SHORT).show();
         }
         else {
-            HashMap<String, String> profileMap = new HashMap<>();
+            HashMap<String, Object> profileMap = new HashMap<>();
             profileMap.put("uid", currentUserID);
             profileMap.put("name", setUsername);
             profileMap.put("status", setStatus);
 
-            rootReference.child("Users").child(currentUserID).setValue(profileMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+            rootReference.child("Users").child(currentUserID).updateChildren(profileMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()){
