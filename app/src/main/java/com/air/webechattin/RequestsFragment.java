@@ -168,6 +168,53 @@ public class RequestsFragment extends Fragment {
                                 });
 
                             }
+                            else if(type.equals("sent")){
+                                Button requestSentButton = holder.itemView.findViewById(R.id.request_accept_button);
+                                requestSentButton.setText("Request sent");
+
+                                usersReference.child(listUserId).addValueEventListener(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        if(snapshot.hasChild("image")){
+                                            final String profileImage = snapshot.child("image").getValue().toString();
+
+                                            Picasso.get().load(profileImage).placeholder(R.drawable.profile_image).into(holder.userImage);
+                                        }
+
+                                        final String profileName = snapshot.child("name").getValue().toString();
+
+                                        holder.userName.setText(profileName);
+                                        holder.userStatus.setText(" You have sent a request to: " + profileName);
+
+                                        holder.declineButton.setText("Cancel request");
+
+                                        holder.declineButton.setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View view) {
+                                                requestReference.child(currentUserId).child(listUserId).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                        if(task.isSuccessful()){
+                                                            requestReference.child(listUserId).child(currentUserId).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                @Override
+                                                                public void onComplete(@NonNull Task<Void> task) {
+                                                                    if(task.isSuccessful()){
+                                                                        Toast.makeText(getContext(), "Request canceled!", Toast.LENGTH_SHORT).show();
+                                                                    }
+                                                                }
+                                                            });
+                                                        }
+                                                    }
+                                                });
+                                            }
+                                        });
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+                                    }
+                                });
+                            }
                         }
                     }
 
