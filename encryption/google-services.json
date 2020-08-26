@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:404256505660:android:2f4bc69b670ed524b7a839",
         "android_client_info": {
-          "package_name": "com.air.webechattin"
+          "package_name": "com.air.encryption"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "404256505660-quu8hl32npnl5rrkmjo6s05r84jtaam2.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.air.webechattin",
+            "package_name": "com.air.encryption",
             "certificate_hash": "0c06cf9040a19cf5f58ae0219365d484ddb802c8"
           }
         },

@@ -1,5 +1,7 @@
 package com.air.webechattin;
 
+import com.air.encryption.Encryption;
+
 public class Messages {
     String from;
     String message;
@@ -26,8 +28,7 @@ public class Messages {
         this.from = from;
     }
 
-    public String getMessage() {
-        return message;
+    public String getMessage() { return message;
     }
 
     public void setMessage(String message) {

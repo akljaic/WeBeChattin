@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.air.encryption.Encryption;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,6 +27,8 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
     FirebaseAuth mAuth;
     DatabaseReference usersReference;
+
+    Encryption encryption;
 
     public MessageAdapter (List<Messages> userMessagesList) {
         this.userMessagesList = userMessagesList;
@@ -68,6 +71,9 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
         String fromUserId = messages.getFrom();
         String fromMessageType = messages.getType();
 
+        encryption = new Encryption(messages.getMessage(), "D");
+        String decryptedMessage = encryption.getStringMessage();
+
         usersReference = FirebaseDatabase.getInstance().getReference().child("Users").child(fromUserId);
         usersReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -97,7 +103,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             holder.mSentTimestampText.setVisibility(View.VISIBLE);
 
             holder.mSenderMessageText.setBackgroundResource(R.drawable.sender_message_layout);
-            holder.mSenderMessageText.setText(messages.getMessage());
+            holder.mSenderMessageText.setText(decryptedMessage);
             holder.mSentTimestampText.setText(messages.getTime() + " " + messages.getDate());
         }
         else{
@@ -106,7 +112,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             holder.mReceivedTimestampText.setVisibility(View.VISIBLE);
 
             holder.mReceiverMessageText.setBackgroundResource(R.drawable.receiver_message_layout);
-            holder.mReceiverMessageText.setText(messages.getMessage());
+            holder.mReceiverMessageText.setText(decryptedMessage);
             holder.mReceivedTimestampText.setText(messages.getTime() + " " + messages.getDate());
         }
     }

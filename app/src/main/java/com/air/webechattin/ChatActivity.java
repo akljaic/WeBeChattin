@@ -20,6 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.air.encryption.Encryption;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -66,17 +67,14 @@ public class ChatActivity extends AppCompatActivity {
 
     Toolbar chatToolbar;
 
+    Encryption encryption;
+
     final List<Messages> messagesList = new ArrayList<>();
     LinearLayoutManager linearLayoutManager;
     MessageAdapter messageAdapter;
 
     FirebaseAuth mAuth;
     DatabaseReference rootReference;
-
-    byte encryptionKey[] ={9, 115, 51, 86, 105, 4, -31, -23, -68, 88, 17, 20, 3, -105, 119, -53};
-    Cipher cipher;
-    Cipher deCipher;
-    SecretKeySpec secretKeySpec;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -171,7 +169,11 @@ public class ChatActivity extends AppCompatActivity {
 
     private void SendMessage() {
         String messageText = mInputMessage.getText().toString();
-        if(TextUtils.isEmpty(messageText)){
+
+        encryption = new Encryption(messageText, "E");
+        String encryptedMessageText = encryption.getStringMessage();
+
+        if(TextUtils.isEmpty(encryptedMessageText)){
             Toast.makeText(this, "Write a message", Toast.LENGTH_SHORT).show();
         }
         else {
@@ -188,13 +190,10 @@ public class ChatActivity extends AppCompatActivity {
 
             DatabaseReference userMessageKeyReference = rootReference.child("Messages").child(messageSenderRef).child(messageReceiverRef).push();
 
-
-
-
             String messagePushId = userMessageKeyReference.getKey();
 
             Map messageTextBody = new HashMap();
-            messageTextBody.put("message", messageText);
+            messageTextBody.put("message", encryptedMessageText);
             messageTextBody.put("type", "text");
             messageTextBody.put("from", senderId);
             messageTextBody.put("date", currentDate);
@@ -211,76 +210,7 @@ public class ChatActivity extends AppCompatActivity {
                     mInputMessage.setText("");
                 }
             });
-
-            CryptMessage();
         }
     }
 
-    private void CryptMessage() {
-        try {
-            cipher = Cipher.getInstance("AES");
-            deCipher = Cipher.getInstance("AES");
-
-
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (NoSuchPaddingException e) {
-            e.printStackTrace();
-        }
-
-        secretKeySpec = new SecretKeySpec(encryptionKey, "AES");
-
-    }
-
-    DatabaseReference dbRef;
-
-    public void sendButton(View view){
-        Date date = new Date();
-        dbRef.child("child").setValue(AESEncriptionMethod(mInputMessage.getText().toString()));
-    }
-
-    private String AESEncriptionMethod(String string){
-        byte [] stringByte = string.getBytes();
-        byte [] encryptedByte = new byte[stringByte.length];
-        String returnString = null;
-
-        try {
-            cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec);
-
-            encryptedByte = cipher.doFinal(stringByte);
-        } catch (InvalidKeyException e) {
-            e.printStackTrace();
-        } catch (BadPaddingException e) {
-            e.printStackTrace();
-        } catch (IllegalBlockSizeException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            return returnString = new String(encryptedByte, "ISO-8859-1");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-
-        return returnString;
-    }
-
-    private String AESDecryptionMethod(String string) throws UnsupportedEncodingException {
-        byte[] EncryptedByte = string.getBytes("ISO-8859-1");
-        String decryptedString = string;
-        byte[] decryption;
-
-        try {
-            deCipher.init(cipher.DECRYPT_MODE, secretKeySpec);
-            decryption = deCipher.doFinal(EncryptedByte);
-            decryptedString = new String(decryption);
-        } catch (InvalidKeyException e) {
-            e.printStackTrace();
-        } catch (BadPaddingException e) {
-            e.printStackTrace();
-        } catch (IllegalBlockSizeException e) {
-            e.printStackTrace();
-        }
-        return decryptedString;
-    }
 }

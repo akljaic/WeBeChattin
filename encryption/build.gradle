@@ -1,11 +1,11 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 29
 
     defaultConfig {
-        applicationId "com.air.encryption"
+        //applicationId "com.air.encryption"
         minSdkVersion 26
         targetSdkVersion 29
         versionCode 1
@@ -23,7 +23,7 @@ android {
 }
 
 dependencies {
-    implementation project(':app')
+    //implementation project(':app')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
