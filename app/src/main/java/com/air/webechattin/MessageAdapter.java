@@ -35,6 +35,8 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
         TextView mSenderMessageText;
         TextView mReceiverMessageText;
         CircleImageView mReceiverProfileImage;
+        TextView mSentTimestampText;
+        TextView mReceivedTimestampText;
 
         public MessageViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -42,6 +44,8 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             mSenderMessageText = (TextView)itemView.findViewById(R.id.sender_message_text);
             mReceiverMessageText = (TextView)itemView.findViewById(R.id.receiver_message_text);
             mReceiverProfileImage = (CircleImageView)itemView.findViewById(R.id.message_profile_image);
+            mSentTimestampText = (TextView)itemView.findViewById(R.id.sent_timestamp_text);
+            mReceivedTimestampText = (TextView)itemView.findViewById(R.id.received_timestamp_text);
         }
     }
 
@@ -85,17 +89,25 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
         holder.mReceiverProfileImage.setVisibility(View.INVISIBLE);
         holder.mSenderMessageText.setVisibility(View.INVISIBLE);
 
+        holder.mSentTimestampText.setVisibility(View.INVISIBLE);
+        holder.mReceivedTimestampText.setVisibility(View.INVISIBLE);
+
         if (fromUserId.equals(messageSenderId)){
             holder.mSenderMessageText.setVisibility(View.VISIBLE);
+            holder.mSentTimestampText.setVisibility(View.VISIBLE);
+
             holder.mSenderMessageText.setBackgroundResource(R.drawable.sender_message_layout);
             holder.mSenderMessageText.setText(messages.getMessage());
+            holder.mSentTimestampText.setText(messages.getTime() + " " + messages.getDate());
         }
         else{
             holder.mReceiverProfileImage.setVisibility(View.VISIBLE);
             holder.mReceiverMessageText.setVisibility(View.VISIBLE);
+            holder.mReceivedTimestampText.setVisibility(View.VISIBLE);
 
             holder.mReceiverMessageText.setBackgroundResource(R.drawable.receiver_message_layout);
             holder.mReceiverMessageText.setText(messages.getMessage());
+            holder.mReceivedTimestampText.setText(messages.getTime() + " " + messages.getDate());
         }
     }
 

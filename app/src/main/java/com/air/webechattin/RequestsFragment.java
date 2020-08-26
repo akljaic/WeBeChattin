@@ -170,7 +170,8 @@ public class RequestsFragment extends Fragment {
                             }
                             else if(type.equals("sent")){
                                 Button requestSentButton = holder.itemView.findViewById(R.id.request_accept_button);
-                                requestSentButton.setText("Request sent");
+                                //requestSentButton.setText("Request sent");
+                                requestSentButton.setVisibility(View.INVISIBLE);
 
                                 usersReference.child(listUserId).addValueEventListener(new ValueEventListener() {
                                     @Override

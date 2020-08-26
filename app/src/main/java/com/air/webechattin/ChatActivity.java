@@ -30,7 +30,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,6 +44,8 @@ public class ChatActivity extends AppCompatActivity {
     String receiverName;
     String receiverImage;
     String senderId;
+    String currentDate;
+    String currentTime;
 
     TextView mUserName;
     CircleImageView mUserImage;
@@ -158,6 +162,14 @@ public class ChatActivity extends AppCompatActivity {
             String messageSenderRef = "Messages/" + senderId + "/" + receiverId;
             String messageReceiverRef = "Messages/" + receiverId + "/" + senderId;
 
+            Calendar calendarForDate = Calendar.getInstance();
+            SimpleDateFormat currentDateFormat = new SimpleDateFormat("dd.MM.yyyy");
+            currentDate = currentDateFormat.format(calendarForDate.getTime());
+
+            Calendar calendarForTime = Calendar.getInstance();
+            SimpleDateFormat currentTimeFormat = new SimpleDateFormat("hh:mm");
+            currentTime = currentTimeFormat.format(calendarForTime.getTime());
+
             DatabaseReference userMessageKeyReference = rootReference.child("Messages").child(messageSenderRef).child(messageReceiverRef).push();
 
             String messagePushId = userMessageKeyReference.getKey();
@@ -166,6 +178,8 @@ public class ChatActivity extends AppCompatActivity {
             messageTextBody.put("message", messageText);
             messageTextBody.put("type", "text");
             messageTextBody.put("from", senderId);
+            messageTextBody.put("date", currentDate);
+            messageTextBody.put("time", currentTime);
             //messageTextBody.put("from", senderId);
 
             Map messageBodyDetails = new HashMap();

@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         mToolbar = (Toolbar) findViewById(R.id.main_page_toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("WeBeChattin");
+        getSupportActionBar().setTitle("We Be Chattin'");
 
         mViewPager = (ViewPager)findViewById(R.id.main_tabs_pager);
         mTabsAccessAdapter = new TabsAccessAdapter(getSupportFragmentManager());
@@ -106,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
     }
@@ -134,9 +133,9 @@ public class MainActivity extends AppCompatActivity {
                 mAuth.signOut();
                 SendUserToLoginActivity();
                 break;
-            case R.id.main_create_group_option:
+            /*case R.id.main_create_group_option:
                 RequestNewGroup();
-                break;
+                break;*/
         }
         return true;
     }

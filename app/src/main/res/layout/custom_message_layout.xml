@@ -11,17 +11,29 @@
         android:layout_marginTop="10dp"
         android:src="@drawable/profile_image"/>
     <TextView
-        android:id="@+id/receiver_message_text"
+    android:id="@+id/receiver_message_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_marginTop="10dp"
+    android:layout_toEndOf="@+id/message_profile_image"
+    android:background="@drawable/receiver_message_layout"
+    android:text="receiver message here"
+    android:padding="10dp"
+    android:textSize="14sp"
+    android:textStyle="bold"
+    />
+    <TextView
+        android:id="@+id/sent_timestamp_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="10dp"
+        android:layout_below="@+id/receiver_message_text"
         android:layout_toEndOf="@+id/message_profile_image"
-        android:background="@drawable/receiver_message_layout"
-        android:text="receiver message here"
+        android:text="receiver timestamp here"
         android:padding="10dp"
-        android:textSize="14sp"
-        android:textStyle="bold"
+        android:textSize="10sp"
         />
     <TextView
         android:id="@+id/sender_message_text"
@@ -35,6 +47,17 @@
         android:padding="10dp"
         android:textSize="14sp"
         android:textStyle="bold"
+        />
+    <TextView
+        android:id="@+id/received_timestamp_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentTop="@+id/sender_message_text"
+        android:text="receiver timestamp here"
+        android:padding="10dp"
+        android:textSize="10sp"
         />
 
 </RelativeLayout>

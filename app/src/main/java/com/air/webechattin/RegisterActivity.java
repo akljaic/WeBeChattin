@@ -91,6 +91,12 @@ public class RegisterActivity extends AppCompatActivity {
         if (TextUtils.isEmpty(password)){
             Toast.makeText(this, "Please enter a password...", Toast.LENGTH_SHORT).show();
         }
+        if (password.length() < 6){
+            mUserPassword.setError("Minimum password length is 6!");
+            mUserPassword.requestFocus();
+            return;
+        }
+
         else {
             loadingBar.setTitle("Creating new account");
             loadingBar.setMessage("Please wait...");

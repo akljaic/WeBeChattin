@@ -80,7 +80,6 @@ public class LoginActivity extends AppCompatActivity {
         mUserEmail = (EditText)findViewById(R.id.login_email);
         mUserPassword = (EditText)findViewById(R.id.login_password);
         mNeedNewAccount = (TextView)findViewById(R.id.need_new_account_link);
-        mForgetPassword = (TextView)findViewById(R.id.forget_password_link);
 
         loadingBar = new ProgressDialog(this);
     }

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/WeBeChattin.iml" filepath="$PROJECT_DIR$/.idea/modules/WeBeChattin.iml" group="WeBeChattin" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="WeBeChattin/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/encryption/encryption.iml" filepath="$PROJECT_DIR$/.idea/modules/encryption/encryption.iml" group="WeBeChattin/encryption" />
     </modules>
   </component>
 </project>
