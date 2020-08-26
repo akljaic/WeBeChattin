@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "404256505660",
+    "firebase_url": "https://webechattinapp.firebaseio.com",
+    "project_id": "webechattinapp",
+    "storage_bucket": "webechattinapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:404256505660:android:2f4bc69b670ed524b7a839",
+        "android_client_info": {
+          "package_name": "com.air.webechattin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "404256505660-quu8hl32npnl5rrkmjo6s05r84jtaam2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.air.webechattin",
+            "certificate_hash": "0c06cf9040a19cf5f58ae0219365d484ddb802c8"
+          }
+        },
+        {
+          "client_id": "404256505660-83p4him432qd8rkkfntgbcu0u0i7jtqq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrCFTgGHjGw2ZcQLBBtKtOrmWFeZ58W10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "404256505660-83p4him432qd8rkkfntgbcu0u0i7jtqq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
