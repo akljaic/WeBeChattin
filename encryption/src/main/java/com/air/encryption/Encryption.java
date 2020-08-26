@@ -24,11 +24,15 @@ public class Encryption {
     public Encryption(String newStringMessage, String type) {
         //this.stringMessage = stringMessage;
         initCryptMessage();
-        if (type.equals('E')){
+        if (type.equals("E")){
             newStringMessage = AESEncriptionMethod(newStringMessage);
         }
-        else if (type.equals('D')){
-            newStringMessage = AESEncriptionMethod(newStringMessage);
+        else if (type.equals("D")){
+            try {
+                newStringMessage = AESDecryptionMethod(newStringMessage);
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
         }
         this.stringMessage = newStringMessage;
     }
