@@ -20,7 +20,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.air.encryption.Encryption;
+import com.air.encryption2.AESCryptography;
+import com.air.encryption2.IEncryption;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,11 +31,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
-
-import java.io.UnsupportedEncodingException;
-import java.nio.file.attribute.UserPrincipalNotFoundException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -42,12 +38,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import javax.crypto.BadPaddingException;
-import javax.crypto.Cipher;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
-import javax.crypto.spec.SecretKeySpec;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -67,7 +57,8 @@ public class ChatActivity extends AppCompatActivity {
 
     Toolbar chatToolbar;
 
-    Encryption encryption;
+    IEncryption encryption = null;
+    //Encryption encryption;
 
     final List<Messages> messagesList = new ArrayList<>();
     LinearLayoutManager linearLayoutManager;
@@ -167,11 +158,19 @@ public class ChatActivity extends AppCompatActivity {
         });
     }
 
+
+    private void setEncryption(IEncryption enc) {
+        enc = new AESCryptography();
+    }
+
     private void SendMessage() {
+        setEncryption(encryption);
+
         String messageText = mInputMessage.getText().toString();
 
-        encryption = new Encryption(messageText, "E");
-        String encryptedMessageText = encryption.getStringMessage();
+        //encryption = new Encryption(messageText, "E");
+        //String encryptedMessageText = encryption.getStringMessage();
+        String encryptedMessageText = encryption.EncryptMessage(messageText);
 
         if(TextUtils.isEmpty(encryptedMessageText)){
             Toast.makeText(this, "Write a message", Toast.LENGTH_SHORT).show();
@@ -212,5 +211,6 @@ public class ChatActivity extends AppCompatActivity {
             });
         }
     }
+
 
 }

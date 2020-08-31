@@ -1,3 +1,4 @@
+include ':encryption2'
 include ':encryption'
 include ':app'
 rootProject.name = "WeBeChattin"

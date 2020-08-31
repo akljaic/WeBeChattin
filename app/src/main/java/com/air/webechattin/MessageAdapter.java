@@ -8,7 +8,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.air.encryption.Encryption;
+import com.air.encryption2.AESCryptography;
+import com.air.encryption2.IEncryption;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,7 +29,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     FirebaseAuth mAuth;
     DatabaseReference usersReference;
 
-    Encryption encryption;
+    IEncryption encryption;
 
     public MessageAdapter (List<Messages> userMessagesList) {
         this.userMessagesList = userMessagesList;
@@ -49,7 +50,13 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             mReceiverProfileImage = (CircleImageView)itemView.findViewById(R.id.message_profile_image);
             mSentTimestampText = (TextView)itemView.findViewById(R.id.sent_timestamp_text);
             mReceivedTimestampText = (TextView)itemView.findViewById(R.id.received_timestamp_text);
+
+            setEncryption(encryption);
         }
+    }
+
+    private void setEncryption(IEncryption enc) {
+        enc = new AESCryptography();
     }
 
     @NonNull
@@ -71,8 +78,9 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
         String fromUserId = messages.getFrom();
         String fromMessageType = messages.getType();
 
-        encryption = new Encryption(messages.getMessage(), "D");
-        String decryptedMessage = encryption.getStringMessage();
+        //encryption = new Encryption(messages.getMessage(), "D");
+        //String decryptedMessage = encryption.getStringMessage();
+        String decryptedMessage = encryption.DecryptMessage(messages.getMessage());
 
         usersReference = FirebaseDatabase.getInstance().getReference().child("Users").child(fromUserId);
         usersReference.addValueEventListener(new ValueEventListener() {

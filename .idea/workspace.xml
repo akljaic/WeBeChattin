@@ -10,16 +10,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6387b091-3b4b-4fee-b429-3932091d7bca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_16_0_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_16_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_flags_16_0_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_16_0_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_auth_16_0_5_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_auth_interop_16_0_1_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_common_16_0_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_database_16_0_4_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_database_collection_16_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_storage_16_0_4_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_core_1_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_ext_junit_1_1_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_monitor_1_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_runner_1_3_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/encryption2/encryption2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/src/androidTest/java/com/air/encryption2/ExampleInstrumentedTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/src/main/java/com/air/encryption2/AESCryptography.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/src/main/java/com/air/encryption2/IEncryption.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/src/main/res/values/styles.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encryption2/src/test/java/com/air/encryption2/ExampleUnitTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -31,22 +53,28 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/encryption/encryption.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/encryption/encryption.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/air/webechattin/ChatActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/air/webechattin/ChatActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/air/webechattin/MessageAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/air/webechattin/MessageAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/air/webechattin/Messages.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/air/webechattin/Messages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/encryption/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/encryption/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/encryption/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/encryption/google-services.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/encryption/src/main/java/com/air/encryption/Encryption.java" beforeDir="false" afterPath="$PROJECT_DIR$/encryption/src/main/java/com/air/encryption/Encryption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="EHT7N19425010199" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_6_API_26" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -88,6 +116,7 @@
       <list>
         <option value="resourceFile" />
         <option value="layoutResourceFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -251,6 +280,57 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="encryption2" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="encryption2" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WeBeChattin [signingReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -298,22 +378,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" width="816" height="775" key="#Intentions/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598231571544" />
-    <state x="477" y="251" key="#PSD" timestamp="1598188178680">
+    <state x="477" y="251" key="#PSD" timestamp="1598812595083">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="477" y="251" key="#PSD/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598188178680" />
+    <state x="477" y="251" key="#PSD/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598812595083" />
     <state x="561" y="178" key="#Updates" timestamp="1598139500220">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="561" y="178" key="#Updates/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598139500220" />
+    <state x="679" y="165" key="#app" timestamp="1598811625983">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="679" y="165" key="#app/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598811625983" />
     <state x="689" y="278" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1598102418659">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="689" y="278" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598102418659" />
-    <state x="765" y="229" width="581" height="582" key="#com.intellij.ide.util.MemberChooser" timestamp="1598433246545">
+    <state x="765" y="229" width="581" height="582" key="#com.intellij.ide.util.MemberChooser" timestamp="1598825673364">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="229" width="581" height="582" key="#com.intellij.ide.util.MemberChooser/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598433246545" />
+    <state x="765" y="229" width="581" height="582" key="#com.intellij.ide.util.MemberChooser/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598825673364" />
     <state x="649" y="247" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598139524646">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -338,22 +422,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="261" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598138347992" />
-    <state width="1877" height="238" key="GridCell.Tab.0.bottom" timestamp="1598438132727">
+    <state width="1877" height="237" key="GridCell.Tab.0.bottom" timestamp="1598837321142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="238" key="GridCell.Tab.0.bottom/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598438132727" />
-    <state width="1877" height="238" key="GridCell.Tab.0.center" timestamp="1598438132727">
+    <state width="1877" height="237" key="GridCell.Tab.0.bottom/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598837321142" />
+    <state width="1877" height="237" key="GridCell.Tab.0.center" timestamp="1598837321142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="238" key="GridCell.Tab.0.center/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598438132727" />
-    <state width="1877" height="238" key="GridCell.Tab.0.left" timestamp="1598438132726">
+    <state width="1877" height="237" key="GridCell.Tab.0.center/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598837321142" />
+    <state width="1877" height="237" key="GridCell.Tab.0.left" timestamp="1598837321142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="238" key="GridCell.Tab.0.left/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598438132726" />
-    <state width="1877" height="238" key="GridCell.Tab.0.right" timestamp="1598438132727">
+    <state width="1877" height="237" key="GridCell.Tab.0.left/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598837321142" />
+    <state width="1877" height="237" key="GridCell.Tab.0.right" timestamp="1598837321142">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="238" key="GridCell.Tab.0.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598438132727" />
+    <state width="1877" height="237" key="GridCell.Tab.0.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598837321142" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1598137657571">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -362,10 +446,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.android.tools.idea.avdmanager.AvdListDialog/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1596409782656" />
-    <state x="664" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1598138744187">
+    <state x="664" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1598821996476">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="664" y="343" key="com.intellij.ide.util.TipDialog/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598138744187" />
+    <state x="664" y="343" key="com.intellij.ide.util.TipDialog/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598821996476" />
     <state x="778" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598317056898">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -374,6 +458,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="484" y="262" key="psd.add.library.dependency.panel.dimension/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598188177429" />
+    <state x="807" y="147" width="529" height="706" key="psd.add.module.dependency.panel.dimension" timestamp="1598812566511">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="807" y="147" width="529" height="706" key="psd.add.module.dependency.panel.dimension/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598812566511" />
     <state x="666" y="148" key="refactoring.ChangeSignatureDialog" timestamp="1598432203427">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

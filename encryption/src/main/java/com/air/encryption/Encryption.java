@@ -45,11 +45,6 @@ public class Encryption {
         this.stringMessage = stringMessage;
     }
 
-    public String decryptStringMessage(String stringMessage) {
-         String decryptedStringMessage =  AESEncriptionMethod(stringMessage);
-        return decryptedStringMessage;
-    }
-
     private void initCryptMessage() {
         try {
             cipher = Cipher.getInstance("AES");
