@@ -158,19 +158,16 @@ public class ChatActivity extends AppCompatActivity {
         });
     }
 
-
-    private void setEncryption(IEncryption enc) {
+    private IEncryption setEncryption(IEncryption enc) {
         enc = new AESCryptography();
+        return enc;
     }
 
     private void SendMessage() {
-        setEncryption(encryption);
-
         String messageText = mInputMessage.getText().toString();
-
-        //encryption = new Encryption(messageText, "E");
-        //String encryptedMessageText = encryption.getStringMessage();
+        encryption = setEncryption(encryption);
         String encryptedMessageText = encryption.EncryptMessage(messageText);
+
 
         if(TextUtils.isEmpty(encryptedMessageText)){
             Toast.makeText(this, "Write a message", Toast.LENGTH_SHORT).show();

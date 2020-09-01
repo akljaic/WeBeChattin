@@ -2,7 +2,11 @@ package com.air.encryption2;
 
 public interface IEncryption {
 
-    String EncryptMessage(String string);
+    //String stringMessage();
 
-    String DecryptMessage(String string);
+    //String EncryptMessage(String string);
+    //String EncryptMessage(String message);
+
+    String EncryptMessage(String message);
+    String DecryptMessage(String message);
 }

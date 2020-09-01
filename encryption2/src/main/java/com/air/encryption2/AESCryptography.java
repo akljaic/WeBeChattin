@@ -17,15 +17,27 @@ public class AESCryptography implements IEncryption {
     private Cipher deCipher;
     private SecretKeySpec secretKeySpec;
 
-    private String stringMessage;
-
     public AESCryptography() {
         initCryptMessage();
     }
 
+    private void initCryptMessage() {
+        try {
+            cipher = Cipher.getInstance("AES");
+            deCipher = Cipher.getInstance("AES");
+
+
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (NoSuchPaddingException e) {
+            e.printStackTrace();
+        }
+        secretKeySpec = new SecretKeySpec(encryptionKey, "AES");
+    }
+
     @Override
-    public String EncryptMessage(String string) {
-        byte [] stringByte = string.getBytes();
+    public String EncryptMessage(String message) {
+        byte [] stringByte = message.getBytes();
         byte [] encryptedByte = new byte[stringByte.length];
         String returnString = null;
 
@@ -48,18 +60,17 @@ public class AESCryptography implements IEncryption {
         }
 
         return returnString;
-
     }
 
     @Override
-    public String DecryptMessage(String string) {
+    public String DecryptMessage(String message) {
         byte[] EncryptedByte = new byte[0];
         try {
-            EncryptedByte = string.getBytes("ISO-8859-1");
+            EncryptedByte = message.getBytes("ISO-8859-1");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        String decryptedString = string;
+        String decryptedString = message;
         byte[] decryption;
 
         try {
@@ -74,19 +85,5 @@ public class AESCryptography implements IEncryption {
             e.printStackTrace();
         }
         return decryptedString;
-    }
-
-    private void initCryptMessage() {
-        try {
-            cipher = Cipher.getInstance("AES");
-            deCipher = Cipher.getInstance("AES");
-
-
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (NoSuchPaddingException e) {
-            e.printStackTrace();
-        }
-        secretKeySpec = new SecretKeySpec(encryptionKey, "AES");
     }
 }

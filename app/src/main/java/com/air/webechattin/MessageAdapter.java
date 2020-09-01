@@ -51,12 +51,12 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             mSentTimestampText = (TextView)itemView.findViewById(R.id.sent_timestamp_text);
             mReceivedTimestampText = (TextView)itemView.findViewById(R.id.received_timestamp_text);
 
-            setEncryption(encryption);
         }
     }
 
-    private void setEncryption(IEncryption enc) {
+    private IEncryption getEncryption(IEncryption enc) {
         enc = new AESCryptography();
+        return enc;
     }
 
     @NonNull
@@ -77,10 +77,11 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
         String fromUserId = messages.getFrom();
         String fromMessageType = messages.getType();
+        String fromMessage = messages.getMessage();
 
-        //encryption = new Encryption(messages.getMessage(), "D");
-        //String decryptedMessage = encryption.getStringMessage();
-        String decryptedMessage = encryption.DecryptMessage(messages.getMessage());
+        encryption = getEncryption(encryption);
+
+        String decryptedMessage = encryption.DecryptMessage(fromMessage);
 
         usersReference = FirebaseDatabase.getInstance().getReference().child("Users").child(fromUserId);
         usersReference.addValueEventListener(new ValueEventListener() {
@@ -120,7 +121,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             holder.mReceivedTimestampText.setVisibility(View.VISIBLE);
 
             holder.mReceiverMessageText.setBackgroundResource(R.drawable.receiver_message_layout);
-            holder.mReceiverMessageText.setText(decryptedMessage);
+            holder.mSenderMessageText.setText(decryptedMessage);
             holder.mReceivedTimestampText.setText(messages.getTime() + " " + messages.getDate());
         }
     }
