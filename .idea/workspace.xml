@@ -23,14 +23,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/encryption/encryption.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/encryption/encryption.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/encryption2/encryption2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/encryption2/encryption2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/air/webechattin/ChatActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/air/webechattin/ChatActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/air/webechattin/MessageAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/air/webechattin/MessageAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/encryption2/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/encryption2/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/encryption2/src/main/java/com/air/encryption2/AESCryptography.java" beforeDir="false" afterPath="$PROJECT_DIR$/encryption2/src/main/java/com/air/encryption2/AESCryptography.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/encryption2/src/main/java/com/air/encryption2/IEncryption.java" beforeDir="false" afterPath="$PROJECT_DIR$/encryption2/src/main/java/com/air/encryption2/IEncryption.java" afterDir="false" />
     </list>
@@ -39,7 +33,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="EHT7N19425010199" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_6_API_26" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -359,10 +353,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="689" y="278" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598102418659" />
-    <state x="765" y="229" width="581" height="582" key="#com.intellij.ide.util.MemberChooser" timestamp="1599001098929">
+    <state x="765" y="229" width="581" height="582" key="#com.intellij.ide.util.MemberChooser" timestamp="1599095605559">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="229" width="581" height="582" key="#com.intellij.ide.util.MemberChooser/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1599001098929" />
+    <state x="765" y="229" width="581" height="582" key="#com.intellij.ide.util.MemberChooser/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1599095605559" />
     <state x="612" y="181" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1598911453786" />
     <state x="649" y="247" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1598139524646">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -388,25 +382,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="261" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1598138347992" />
-    <state width="1875" height="262" key="GridCell.Tab.0.bottom" timestamp="1599003469828">
+    <state width="1875" height="262" key="GridCell.Tab.0.bottom" timestamp="1599096692783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="262" key="GridCell.Tab.0.bottom/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1599003469828" />
+    <state width="1875" height="262" key="GridCell.Tab.0.bottom/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1599096692783" />
     <state width="744" height="111" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598911661138" />
-    <state width="1875" height="262" key="GridCell.Tab.0.center" timestamp="1599003469828">
+    <state width="1875" height="262" key="GridCell.Tab.0.center" timestamp="1599096692783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="262" key="GridCell.Tab.0.center/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1599003469828" />
+    <state width="1875" height="262" key="GridCell.Tab.0.center/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1599096692783" />
     <state width="744" height="111" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1598911661138" />
-    <state width="1875" height="262" key="GridCell.Tab.0.left" timestamp="1599003469828">
+    <state width="1875" height="262" key="GridCell.Tab.0.left" timestamp="1599096692783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="262" key="GridCell.Tab.0.left/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1599003469828" />
+    <state width="1875" height="262" key="GridCell.Tab.0.left/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1599096692783" />
     <state width="744" height="111" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1598911661138" />
-    <state width="1875" height="262" key="GridCell.Tab.0.right" timestamp="1599003469828">
+    <state width="1875" height="262" key="GridCell.Tab.0.right" timestamp="1599096692783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1875" height="262" key="GridCell.Tab.0.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1599003469828" />
+    <state width="1875" height="262" key="GridCell.Tab.0.right/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1599096692783" />
     <state width="744" height="111" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598911661138" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1598137657571">
       <screen x="0" y="0" width="1920" height="1040" />

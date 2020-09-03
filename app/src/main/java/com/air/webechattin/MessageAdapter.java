@@ -21,6 +21,8 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageViewHolder> {
 
@@ -50,11 +52,10 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             mReceiverProfileImage = (CircleImageView)itemView.findViewById(R.id.message_profile_image);
             mSentTimestampText = (TextView)itemView.findViewById(R.id.sent_timestamp_text);
             mReceivedTimestampText = (TextView)itemView.findViewById(R.id.received_timestamp_text);
-
         }
     }
 
-    private IEncryption getEncryption(IEncryption enc) {
+    private IEncryption setEncryption(IEncryption enc) {
         enc = new AESCryptography();
         return enc;
     }
@@ -76,10 +77,10 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
         Messages messages = userMessagesList.get(position);
 
         String fromUserId = messages.getFrom();
-        String fromMessageType = messages.getType();
+        //String fromMessageType = messages.getType();
         String fromMessage = messages.getMessage();
 
-        encryption = getEncryption(encryption);
+        encryption = setEncryption(encryption);
 
         String decryptedMessage = encryption.DecryptMessage(fromMessage);
 
@@ -121,7 +122,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             holder.mReceivedTimestampText.setVisibility(View.VISIBLE);
 
             holder.mReceiverMessageText.setBackgroundResource(R.drawable.receiver_message_layout);
-            holder.mSenderMessageText.setText(decryptedMessage);
+            holder.mReceiverMessageText.setText(decryptedMessage);
             holder.mReceivedTimestampText.setText(messages.getTime() + " " + messages.getDate());
         }
     }

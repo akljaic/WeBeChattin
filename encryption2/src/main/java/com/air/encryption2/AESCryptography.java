@@ -25,8 +25,6 @@ public class AESCryptography implements IEncryption {
         try {
             cipher = Cipher.getInstance("AES");
             deCipher = Cipher.getInstance("AES");
-
-
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         } catch (NoSuchPaddingException e) {
@@ -43,7 +41,6 @@ public class AESCryptography implements IEncryption {
 
         try {
             cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec);
-
             encryptedByte = cipher.doFinal(stringByte);
         } catch (InvalidKeyException e) {
             e.printStackTrace();
@@ -58,7 +55,6 @@ public class AESCryptography implements IEncryption {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-
         return returnString;
     }
 
